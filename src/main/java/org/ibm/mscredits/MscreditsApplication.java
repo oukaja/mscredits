@@ -20,6 +20,7 @@ public class MscreditsApplication {
     public static void main(String[] args) {
         SpringApplication.run(MscreditsApplication.class, args);
     }
+    // data pour les test
     /*@Autowired
     ProduitRepository produitRepository;
     @Autowired
