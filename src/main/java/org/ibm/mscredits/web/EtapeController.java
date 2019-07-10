@@ -20,7 +20,7 @@ public class EtapeController {
     @ApiOperation(value = "list of all Step")
     public Page<Etape> getAll(Pageable pageable){return rep.findAll(pageable);}
 
-    @GetMapping("/etape/{id}")
+    @GetMapping("/etapes/{id}")
     @ApiOperation(value = "get details of a Step")
     public Etape getOne(@PathVariable long id) {
         return rep.findById(id).get();

@@ -1,6 +1,9 @@
 package org.ibm.mscredits.entities;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Produit implements Serializable {
+public class Produit implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
@@ -25,8 +28,8 @@ public class Produit implements Serializable {
     protected Long tauxMin ;
     protected Long tauxMax;
 
-    @OneToMany(mappedBy = "produit",fetch = FetchType.LAZY)
-    @JsonManagedReference
+    @OneToMany(mappedBy = "produit",fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("produit")
     List<Simulation> simulations;
 
     public String toString(){

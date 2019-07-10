@@ -19,7 +19,7 @@ public class SimulationController {
     @ApiOperation(value = "list of all Simulations")
     public Page<Simulation> getAll(Pageable pageable){return rep.findAll(pageable);}
 
-    @GetMapping("/simulation/{id}")
+    @GetMapping("/simulations/{id}")
     @ApiOperation(value = "get details of a Simulation")
     public Simulation getOne(@PathVariable long id) {
         return rep.findById(id).get();

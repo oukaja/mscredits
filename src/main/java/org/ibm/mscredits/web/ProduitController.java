@@ -20,7 +20,7 @@ public class ProduitController {
     @ApiOperation(value = "list of all Products")
     public Page<Produit> getAll(Pageable pageable){return rep.findAll(pageable);}
 
-    @GetMapping("/produit/{id}")
+    @GetMapping("/produits/{id}")
     @ApiOperation(value = "get detail of a Product")
     public Produit getOne(@PathVariable long id) {
         return rep.findById(id).get();
